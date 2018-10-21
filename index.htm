@@ -71,7 +71,7 @@
 				if (vFilmeExistente.length > 0) {
 					vFilmeExistente[0].quantidade++;
 
-					NotificacaoService.adicionar('Novo filme adicionado - Total: ' + vFilmeExistente[0].quantidade)
+					//NotificacaoService.adicionar('Novo filme adicionado - Total: ' + vFilmeExistente[0].quantidade)
 				}
 				else
 				{
@@ -82,7 +82,7 @@
 						precoUnitario: 10
 					})
 
-					NotificacaoService.adicionar('Novo filme adicionado - Total: 1')
+					//NotificacaoService.adicionar('Novo filme adicionado - Total: 1');
 				}
 
 
@@ -92,7 +92,7 @@
 												function(oFilme) { 
 													return oFilme.titulo != sTituloFilme; 
 												});
-				NotificacaoService.adicionar('Novo filme removido - Total: 0');
+				//NotificacaoService.adicionar('Novo filme removido - Total: 0');
 			}
 
 			servico.exibeQuantidadeTotal = function() {
@@ -167,7 +167,7 @@
 
 			<button class="btn btn-warning">
 				Carrinho 
-				<span class="badge">0</span>
+				<span class="badge">{{ cc.exibeQuantidadeTotalCarrinho() }}</span>
 			</button>
 
 			<button class="btn btn-danger">
@@ -219,7 +219,7 @@
 						
 					</ul>
 					<button class="btn btn-default" ng-click="df.voltarParaLista();">Voltar</button>
-					<button class="btn btn-primary" ng-click="adicionarFilmeNoCarrinho();">Adicionar no Carrinho</button>
+					<button class="btn btn-primary" ng-click="df.adicionarFilmeNoCarrinho();">Adicionar no Carrinho</button>
 				</div>
 		</div>
 
